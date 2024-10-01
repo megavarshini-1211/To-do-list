@@ -4,7 +4,7 @@
      box-sizing: border-box;
 }
 body{
-     background-color: rgb(3, 15, 76);
+     background-color: rgb(17, 17, 65);
      color: rgb(255, 255, 255);
 }
 .background{
@@ -26,7 +26,7 @@ body{
      margin-bottom: 3rem;
      justify-content: space-between;
      width: 100%;
-     box-shadow: 0 8px 30px rgb(31, 52, 169);
+     box-shadow: 0 8px 50px rgb(32, 52, 165);
 }
 .details{
      display: flex;
@@ -46,7 +46,16 @@ body{
      display: flex;
      flex-direction: column;
      width: 100%;
-
+}
+.text-wrap p{
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     color: rgb(31, 221, 37);
+     text-shadow: 0 3px 15px rgb(154, 224, 156);
+}
+.text-wrap h1{
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color: rgb(255, 255, 255);
+     text-shadow: 0 3px 15px rgb(101, 216, 237);
 }
 #numbers{
      width: 100px;
@@ -64,19 +73,23 @@ body{
 #loadbar{
      width: 100%;
      height: 10px;
-     background-color: rgb(38, 47, 88);
+     background-color: rgb(46, 64, 143);
      display: flex;
      flex-direction: column;
      margin-top: 20px;
      border-radius: 10px;
+     position: relative;
+     
 }
 #progress{
-     width: 75%;
+     width: 0%;
      height: 10px;
      background-color: rgb(7, 155, 168);
      border-radius: 10px;
      transition: width 0.2s ease;
      box-shadow: 0 1px 10px rgb(55, 203, 216);
+     position: absolute;
+     left: 0;
 }
 form{
      display: flex;  
@@ -124,3 +137,53 @@ button:hover{
      color: beige;
      box-shadow: 0 8px 25px rgb(220, 157, 247);
 }
+.checkbox {
+     width: 20px;
+     height: 20px;
+     margin-right: 10px;
+ }
+.taskitem{
+     width: 100%;
+     display: flex;
+     background-color:  rgb(238, 200, 254);
+     padding: 5px;
+     border-radius: 10px;
+     box-shadow: 0 3px 20px rgb(195, 55, 255);
+     justify-content: space-between;
+     align-items: center;
+}
+#tasklist{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     margin-top: 30px;
+}
+#tasklist li{
+     list-style: none;
+     text-align: justify;
+     color: rgb(12, 3, 79);
+     font-size: 1.5rem;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.icons img{
+     margin-top: 0;
+     cursor: pointer;
+}
+.icons img:hover{
+     border-image: round;
+}
+.task{
+     display: flex;
+     align-items: center;
+     gap: 10px;
+}
+.task input{
+     width: 20px;
+     height: 20px;
+     
+}
+.task.completed p {
+     text-decoration: line-through;
+     color: rgb(10, 209, 23);
+ }
