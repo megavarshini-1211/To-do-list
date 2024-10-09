@@ -13,8 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
 const addtask = () => {
     const taskinput = document.getElementById('taskinput');
     const text = taskinput.value.trim();
+    if (!text) {
+        alert("Invalid task input");
+        return; 
+    }
     if (text) {
-        tasks.push({ text: text, completed: false });
+        const date = new Date();
+        const task = {
+            text: text,
+            completed: false,
+            date: date.toLocaleDateString(), 
+            time: date.toLocaleTimeString() 
+        };
+        tasks.push(task);
         taskinput.value = "";
     }
     updatelist();
@@ -59,6 +70,14 @@ const updatestatus=()=>{
 const savetask=()=>{
     localStorage.setItem('tasks',JSON.stringify(tasks));
 };
+const searchTasksByDate = () => {
+    const searchDate = document.getElementById('searchdate').value;
+    if (searchDate) {
+        const filteredTasks = tasks.filter(task => task.date === new Date(searchDate).toLocaleDateString());
+        updatelist(filteredTasks);
+        updatelist(tasks);
+    }
+};
 const updatelist = () => {
     const tasklist = document.getElementById('tasklist');
     tasklist.innerHTML = "";
@@ -69,6 +88,7 @@ const updatelist = () => {
             <div class="task ${task.completed ? "completed" : ""}">
                 <input type="checkbox" class="checkbox" ${task.completed ? 'checked' : ''}>
                 <p>${task.text}</p>
+                <small>${task.date} ${task.time}</small>
             </div>
             <div class="icons">
                 <img src="./images/2editicon.png" width="50px" height="50px" onclick="edittask(${index})">
@@ -84,3 +104,8 @@ document.getElementById("lists").addEventListener("click", function (e) {
     e.preventDefault();
     addtask();
 });
+document.getElementById("searchbtn").addEventListener("click", function (e) {
+    e.preventDefault();
+    searchTasksByDate();
+});
+
