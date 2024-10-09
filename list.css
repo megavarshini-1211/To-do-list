@@ -18,7 +18,7 @@ body{
 
 }
 .pro-box{
-     border: 2px solid transparent;
+      border: 2px solid transparent;
      background-color: rgb(5, 11, 43);
      padding: 30px;
      border-radius: 25px;
@@ -27,6 +27,7 @@ body{
      justify-content: space-between;
      width: 100%;
      box-shadow: 0 8px 50px rgb(32, 52, 165);
+     align-items: center;
 }
 .details{
      display: flex;
@@ -187,3 +188,22 @@ button:hover{
      text-decoration: line-through;
      color: rgb(10, 209, 23);
  }
+.searchbox {
+     margin-top: 0; 
+     margin-left: 50rem; 
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     position: absolute; 
+     right: 30px; 
+     top: 30px;
+ }
+
+#search{
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-size: 18px;
+     font-weight: bold;
+     color: rgb(255, 255, 255);
+     text-shadow: 0 3px 15px rgb(101, 216, 237);
+     margin-right: 10px;
+}
